@@ -1,0 +1,124 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "My API",
+      "description": "Description of your API"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": ["http"],
+    "paths": {
+      "/calculator/add": {
+        "get": {
+          "summary": "Add two numbers",
+          "parameters": [
+            {
+              "name": "num1",
+              "in": "query",
+              "description": "First number",
+              "required": true,
+              "type": "number"
+            },
+            {
+              "name": "num2",
+              "in": "query",
+              "description": "Second number",
+              "required": true,
+              "type": "number"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/calculator/subtract": {
+        "get": {
+          "summary": "Subtract two numbers",
+          "parameters": [
+            {
+              "name": "num1",
+              "in": "query",
+              "description": "First number",
+              "required": true,
+              "type": "number"
+            },
+            {
+              "name": "num2",
+              "in": "query",
+              "description": "Second number",
+              "required": true,
+              "type": "number"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/users/{id}": {
+        "get": {
+          "summary": "Get user by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "User ID",
+              "required": true,
+              "type": "number"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
